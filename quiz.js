@@ -10,31 +10,29 @@
 	
 // A key that specifies which character to use to build the pine tree.
 // The character to use should be from user input in a <input type="text"> field in the DOM.
+var heightInput = document.getElementById("HeightInput").value;
+var characterInput = document.getElementById("CharacterInput").value;
 
 var tree ={
-	height:
-	character:
+	height: heightInput,
+	character: characterInput
 }
 
-function checkInput (wow){
-
-	tree.height = document.getElementById("HeightInput").value;
-	tree.character = document.getElementById("CharacterInput").value;
+function checkInput (click){
 
 	if(!tree.height || !tree.character || tree.character.length > 1){
 	alert("Please Make Sure You Have The Proper Inputs Before Trying To Grow Your Tree")
 } 	else {
-	
+
 	growTree(tree)
-
 }
 
 }
-function growTree(){
+function growTree(tree){
 	var blank = " ";
 	var charTree= (i * 2) + 1;
 	var blankTree= (tree.height - 1) - i;
-	for (i = 1; i < tree.height; i++);
+	for (i = 0; i < tree.height; i++);
 		console.log("Here is Your Tree", blank.repeat(blankTree) + tree.character.repeat(charTree));
 
 }
@@ -42,12 +40,17 @@ function growTree(){
 
 
 
+
 //Get my grow button out of html.
-growbtn.document.getElementById("grow");
-//when my grow button is clicked run my growTree function
+growbtn = document.getElementById("grow");
+//when my grow button is clicked run my checkInput function
 growbtn.addEventListener("click", checkInput);
-
-
+//eventlistener for the enter key
+// document.addEventListener("keydown", function enterPress(){
+//   if (13 == e.keyCode) {
+//   	checkinput()
+// 	}
+// });
 
 // function tree(){
 
