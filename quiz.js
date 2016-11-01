@@ -10,30 +10,34 @@
 	
 // A key that specifies which character to use to build the pine tree.
 // The character to use should be from user input in a <input type="text"> field in the DOM.
-var heightInput = document.getElementById("HeightInput").value;
-var characterInput = document.getElementById("CharacterInput").value;
+var heightInput = document.getElementById("HeightInput");
+var characterInput = document.getElementById("CharacterInput");
 
-var tree ={
-	height: heightInput,
-	character: characterInput
-}
 
 function checkInput (click){
-
-	if(!tree.height || !tree.character || tree.character.length > 1){
+//console.log("Greg Says", tree.height);
+	if(!heightInput.value || !characterInput.value || characterInput.value.length > 1){
 	alert("Please Make Sure You Have The Proper Inputs Before Trying To Grow Your Tree")
-} 	else {
+} 	else { 
+	var tree ={
+	height: heightInput.value,
+	character: characterInput.value
 
-	growTree(tree)
+}
+	growTree(tree);
 }
 
 }
+
+ //console.log("Tree.height", tree.height.value);
 function growTree(tree){
 	var blank = " ";
+	for (i = 0; i < tree.height; i++){
+		//console.log("TreeHeight", tree.height);
 	var charTree= (i * 2) + 1;
 	var blankTree= (tree.height - 1) - i;
-	for (i = 0; i < tree.height; i++);
 		console.log("Here is Your Tree", blank.repeat(blankTree) + tree.character.repeat(charTree));
+	}
 
 }
 
