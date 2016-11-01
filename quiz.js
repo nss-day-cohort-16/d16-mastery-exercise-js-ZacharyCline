@@ -11,75 +11,80 @@
 // A key that specifies which character to use to build the pine tree.
 // The character to use should be from user input in a <input type="text"> field in the DOM.
 
+var tree ={
+	height:
+	character:
+}
 
-function tree(){
+function checkInput (wow){
 
+	tree.height = document.getElementById("HeightInput").value;
+	tree.character = document.getElementById("CharacterInput").value;
 
-var object ={}
-Height: document.getElementById("HeightInput").value;
-Character: document.getElementById("CharacterInput").value;
+	if(!tree.height || !tree.character || tree.character.length > 1){
+	alert("Please Make Sure You Have The Proper Inputs Before Trying To Grow Your Tree")
+} 	else {
+	
+	growTree(tree)
 
+}
 
+}
+function growTree(){
+	var blank = " ";
+	var charTree= (i * 2) + 1;
+	var blankTree= (tree.height - 1) - i;
+	for (i = 1; i < tree.height; i++);
+		console.log("Here is Your Tree", blank.repeat(blankTree) + tree.character.repeat(charTree));
 
-	if (!object.Height || !object.Character) {
-		alert("WHOA! We Need to Know How to Grow Your Tree!");
-	} else {
-			var emptyspace = " "
-		for (i = 0; i < object.Height.length; i++) {
-			var spaces = object.Height - i;
-			var char = 1 + (2 * i);
-			console.log("Check Out the Tree!", empty.repeat(spaces) + object.Character.repeat(char) );
-		}
-	}
 }
 
 
 
 
+//Get my grow button out of html.
+growbtn.document.getElementById("grow");
+//when my grow button is clicked run my growTree function
+growbtn.addEventListener("click", checkInput);
 
 
 
+// function tree(){
+
+
+// var object ={}
+// Height: document.getElementById("HeightInput").value;
+// Character: document.getElementById("CharacterInput").value;
 
 
 
-
-
-
-
-// var object = {}
- 
-// var growbutton = document.getElementById("grow");
-// function tree(object){
-
-// object.Heightkey=document.getElementById("heightinput"),
-// object.Charkey=document.getElementById("textinput")
-// 	if (object.Heightkey==="" || object.Charkey===""){
-// 		alert("There is no input! Fill Both Forms to Build Your Tree!");
+// 	if (!object.Height || !object.Character) {
+// 		alert("WHOA! We Need to Know How to Grow Your Tree!");
 // 	} else {
-// 			var blankspot = " ";
-// 	for (i = 0; i < object.Heightkey; i++){
-// 		var spaces = object.Heightkey - 1;
-// 		var addchar = 1 + (i * 2);
-// 		console.log("Here is Your Tree:", blankspot.repeat(spaces) + object.Charkey.repeat(addchar)); //spaces repeating plus chars repeating
- 
-// 	}
+// 			var emptyspace = " "
+// 		for (i = 0; i < object.Height.length; i++) {
+// 			var spaces = object.Height - i;
+// 			var char = 1 + (2 * i);
+// 		}
 // 	}
 // }
 
-// growbutton.addEventListener("click", tree);
- 
-
-// var obj = {
-// 	Heightkey: document.getElementById("heightinput"),
-// 	Charkey: document.getElementById("textinput")}
 
 
-// console.log(obj.Heightkey);
-
-		
 
 
-// window.addEventListener("keydown", tree)
+
+
+
+
+
+
+
+
+
+
+
+
                 
 
 //If user has filled both text boxes and cursor is within one of the input fields, make an event listener for the enter key to run the tree function.
